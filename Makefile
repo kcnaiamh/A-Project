@@ -1,4 +1,4 @@
-.PHONY: run debug
+.PHONY: build clean run
 SHELL := /bin/bash
 
 PROXY := https://myuser:test@localhost:3128
@@ -49,3 +49,4 @@ run:
 		-H 'Content-Type: application/json' \
 		-d "{\"client_transfer_id\": \"test-001\",\"source_account\": \"$$(uuidgen)\",\"destination_account\": \"$$(uuidgen)\",\"amount\": $$(( ( RANDOM % 151 ) - 10 )),\"currency\": \"BDT\",\"reference\": \"Test payment\"}"
 	@echo
+
